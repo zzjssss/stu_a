@@ -1,0 +1,229 @@
+# 创建
+lst = [1, 2, 3]
+lst = list(range(5))        # [0, 1, 2, 3, 4]
+lst = list("abc")           # ['a', 'b', 'c']
+
+# 增
+lst.append(x)               # 末尾追加
+lst.extend([4, 5, 6])       # 末尾批量追加（合并）
+lst.insert(i, x)            # 在索引 i 处插入
+
+# 删
+lst.remove(x)               # 删除第一个值为 x 的元素
+lst.pop(i)                  # 弹出索引 i 处的元素（默认最后一个）
+lst.clear()                 # 清空列表
+del lst[i]                  # 删除索引 i 处的元素
+del lst[i:j]               # 删除切片
+
+# 查
+lst[i]                      # 索引访问
+lst[i:j]                    # 切片
+lst.index(x)                # 返回第一个 x 的索引
+lst.count(x)                # 统计 x 出现的次数
+len(lst)                    # 长度
+x in lst                    # 是否包含
+
+# 排序 & 反转
+lst.sort()                  # 原地排序（默认升序）
+lst.sort(reverse=True)      # 降序
+lst.reverse()               # 原地反转
+sorted(lst)                 # 返回新列表（不修改原列表）
+
+# 其他
+lst.copy()                  # 浅拷贝
+lst * 3                     # 重复 [1,2,3,1,2,3,1,2,3]
+lst[i] = x                  # 修改元素
+lst[i:j] = [a, b]          # 切片赋值
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 创建
+t = (1, 2, 3)
+t = tuple([1, 2, 3])       # 从列表转换
+t = (1,)                    # 单元素元组（注意逗号）
+t = 1, 2, 3                 # 省略括号也行
+
+# 查
+t[i]                        # 索引访问
+t[i:j]                      # 切片
+t.index(x)                  # 返回第一个 x 的索引
+t.count(x)                  # 统计 x 出现次数
+len(t)                      # 长度
+x in t                      # 是否包含
+
+# 解包
+a, b, c = t                 # 解包
+a, *rest = t                # a=1, rest=[2,3]
+
+
+
+
+
+
+
+# 创建
+d = {"a": 1, "b": 2}
+d = dict(a=1, b=2)
+d = dict.fromkeys(["a", "b"], 0)   # {'a': 0, 'b': 0}
+d = {k: v for k, v in zip(keys, values)}  # 字典推导式
+
+# 增 / 改
+d["c"] = 3                  # 新增 / 修改
+d.update({"c": 3, "d": 4}) # 批量更新（有则改，无则增）
+d.setdefault("e", 5)       # 键不存在时设置默认值
+
+# 删
+del d["a"]                  # 删除键（不存在报错）
+d.pop("a")                  # 弹出键对应的值（不存在报错）
+d.pop("a", default)         # 弹出（不存在返回 default）
+d.popitem()                 # 弹出最后插入的键值对
+d.clear()                   # 清空
+
+# 查
+d["a"]                      # 取值（不存在报 KeyError）
+d.get("a")                  # 取值（不存在返回 None）
+d.get("a", default)         # 取值（不存在返回 default）
+d.keys()                    # 所有键
+d.values()                  # 所有值
+d.items()                   # 所有键值对
+"a" in d                    # 是否包含某键
+len(d)                      # 键值对数量
+
+# 其他
+d.copy()                    # 浅拷贝
+dict1 | dict2               # 合并（Python 3.9+），后者覆盖前者
+
+
+
+
+
+
+
+
+
+
+# 创建
+s = {1, 2, 3}
+s = set([1, 2, 3])
+s = set("abcba")            # {'a', 'b', 'c'} 去重
+fs = frozenset([1, 2, 3])   # 不可变集合
+
+# 增
+s.add(x)                    # 添加元素
+s.update([4, 5, 6])         # 批量添加
+
+# 删
+s.remove(x)                 # 删除（不存在报 KeyError）
+s.discard(x)                # 删除（不存在不报错）
+s.pop()                     # 弹出任意一个元素
+s.clear()                   # 清空
+
+# 查
+x in s                      # 是否包含
+len(s)                      # 元素个数
+
+# 集合运算
+s1 | s2                     # 并集
+s1 & s2                     # 交集
+s1 - s2                     # 差集（s1 有 s2 没有）
+s1 ^ s2                     # 对称差集（不共有的元素）
+s1.isdisjoint(s2)           # 是否不相交
+s1.issubset(s2)             # s1 是否为 s2 子集
+s1.issuperset(s2)           # s1 是否为 s2 超集
+
+# 等价写法
+s1.union(s2)
+s1.intersection(s2)
+s1.difference(s2)
+s1.symmetric_difference(s2)
+
+
+
+
+
+
+
+
+
+
+
+
+# 创建
+s = "hello world"
+s = 'hello'
+s = """多行
+字符串"""
+
+# 查
+s[i]                        # 索引
+s[i:j]                      # 切片
+s.find("ll")                # 返回第一个子串索引（找不到返回 -1）
+s.index("ll")               # 返回索引（找不到报错）
+s.count("l")                # 统计出现次数
+s.startswith("he")          # 是否以某前缀开头
+s.endswith("ld")            # 是否以某后缀结尾
+len(s)                      # 长度
+"ll" in s                   # 是否包含
+
+# 大小写
+s.upper()                   # 全大写
+s.lower()                   # 全小写
+s.title()                   # 每个单词首字母大写
+s.capitalize()              # 首字母大写
+s.swapcase()                # 大小写互换
+s.strip()                   # 去两端空白（或指定字符）
+s.lstrip() / s.rstrip()    # 去左 / 右空白
+
+# 分割 & 拼接
+s.split()                   # 按空白分割 → list
+s.split(",")                # 按逗号分割
+s.split(",", 1)             # 只分割一次
+s.rsplit()                  # 从右边开始分割
+s.partition("o")            # 按第一个 "o" 分成 (前, "o", 后)
+",".join(["a", "b", "c"])   # 拼接 → "a,b,c"
+
+# 替换 & 格式化
+s.replace("ll", "LL")       # 替换
+s.translate(str.maketrans("aeiou", "12345"))  # 字符映射替换
+
+# 判断
+s.isdigit()                 # 是否全为数字
+s.isalpha()                 # 是否全为字母
+s.isalnum()                 # 是否全为字母或数字
+s.isupper() / s.islower()  # 是否全大写 / 小写
+s.isspace()                 # 是否全为空白
+
+# 填充 & 对齐
+s.center(20, "*")           # 居中填充
+s.ljust(20, "-")            # 左对齐
+s.rjust(20, "-")            # 右对齐
+s.zfill(10)                 # 左侧补零
+
+# 其他
+s.encode("utf-8")           # 编码为 bytes
+
+
+
+
+
+
+
+
+
+
+
+
+
