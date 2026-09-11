@@ -1,4 +1,4 @@
-sales = [
+"""sales = [
     {"name": "A", "amount": 320},
     {"name": "B", "amount": 150},
     {"name": "C", "amount": 400},
@@ -8,3 +8,10 @@ sales = [
 
 print(max(sales , key = lambda s:s.get("amount")))
 print(sorted(sales,key = lambda s:s.get("amount"),reverse=True)[:3:])
+
+
+
+"""
+
+str =  "HEllwo dawda"
+print(list(str))

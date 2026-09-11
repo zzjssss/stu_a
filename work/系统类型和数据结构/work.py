@@ -5,6 +5,8 @@ B1. 写一个函数 word_count(text: str) -> dict，返回每个单词出现次�
 去掉标点（只保留字母和可能的撇号）
 返回 {单词: 次数}
 """
+import json
+
 
 def word_count(text: str) -> dict:
     str_s= ""
@@ -41,6 +43,12 @@ print(result)
 
 
 # json数据 与 dict    之间的转换
+# json.dumps()  dict 转为 json
+# json.loads()  json 转为 dict
+json_str='{"name":"zhangsan","age":18}'
+pyton_dict= json.loads(json_str)
+print(type(pyton_dict))
 
-
+json_str_upload= json.dumps(pyton_dict)
+print(type(json_str_upload))
 

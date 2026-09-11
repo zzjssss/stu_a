@@ -1,0 +1,17 @@
+graph TD
+    A["Python 类型系统"] --> B["动态类型（运行时）"]
+    A --> C["渐进式类型注解（静态）"]
+    B --> B1["变量是名字，对象才有类型"]
+    B --> B2["可变 / 不可变"]
+    B --> B3["鸭子类型 / 协议"]
+    B2 --> B21["传参模型：对象引用传递"]
+    B2 --> B22["可哈希 → dict key / set"]
+    B2 --> B23["深浅拷贝"]
+    B3 --> B31["len / iter / with 协议"]
+    B3 --> B32["EAFP 优于 LBYL"]
+    B3 --> B33["Protocol = 静态鸭子类型"]
+    C --> C1["注解只是元数据，不拦截"]
+    C --> C2["X | None、Literal、TypedDict"]
+    C --> C3["TypeVar / 泛型 / Generic"]
+    C --> C4["mypy / PyCharm 才真正检查"]
+    B33 -.->|"桥梁"| C

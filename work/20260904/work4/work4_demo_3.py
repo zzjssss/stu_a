@@ -18,3 +18,7 @@ print(pp)
 
 matrix = [[1, 2, 3], [4, 5], [6, 7, 8, 9]]
 print([x for raw in matrix for x in raw])
+
+del matrix[1][1]
+
+
