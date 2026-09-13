@@ -10,7 +10,7 @@ class User(pydantic.BaseModel):
 
 json_str :str = '{"id":"u001","name":"张三","age":22}'  # 假设是传到后端的json
 
-#json 转化为 dictprint(json_dict)
+#json 转化为 dict  print(json_dict)
 json_dict = json.loads(json_str)
 
 
